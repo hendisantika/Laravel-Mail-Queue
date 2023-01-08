@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/send-email', function () {
+    $data = [
+        'name' => 'Hendi Santika',
+        'body' => 'Testing Kirim Email di hendisantika.com'
+    ];
+
+    Mail::to('alisadikinsyahrizal@gmail.com')->send(new SendEmail($data));
+
+    dd("Email Berhasil dikirim.");
+});
