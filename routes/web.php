@@ -1,7 +1,6 @@
 <?php
 
-use App\Mail\SendEmail;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\SendEmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +18,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/send-email', function () {
-    $data = [
-        'name' => 'Hendi Santika',
-        'body' => 'Testing Kirim Email di hendisantika.com'
-    ];
+//Route::get('/send-email', function () {
+//    $data = [
+//        'name' => 'Hendi Santika',
+//        'body' => 'Testing Kirim Email di hendisantika.com'
+//    ];
+//
+//    Mail::to('hendi@yopmail.com')->send(new SendEmail($data));
+//
+//    dd("Email Berhasil dikirim.");
+//});
 
-    Mail::to('hendi@yopmail.com')->send(new SendEmail($data));
+Route::get('/send-email', [SendEmailController::class, 'index'])->name('kirim-email');
 
-    dd("Email Berhasil dikirim.");
-});
+Route::post('/post-email', [SendEmailController::class, 'store'])->name('post-email');
+
+
