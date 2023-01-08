@@ -9,7 +9,7 @@
 5. Run `php artisan key:generate`
 6. Run `php artisan migrate`
 7. Run `php artisan serve`
-8. Open your favorite browser: http://localhost:8000
+8. Open your favorite browser: http://localhost:8000/send-email
 9. Open another terminal then run `php artisan queue:listen`
 
 
