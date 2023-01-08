@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\SendEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,7 @@ Route::get('/send-email', function () {
         'body' => 'Testing Kirim Email di hendisantika.com'
     ];
 
-    Mail::to('alisadikinsyahrizal@gmail.com')->send(new SendEmail($data));
+    Mail::to('hendi@yopmail.com')->send(new SendEmail($data));
 
     dd("Email Berhasil dikirim.");
 });
