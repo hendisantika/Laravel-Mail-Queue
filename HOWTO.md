@@ -12,4 +12,13 @@
 8. Open your favorite browser: http://localhost:8000/send-email
 9. Open another terminal then run `php artisan queue:listen`
 
+### Image Screen shot
+
+Send Email Form
+
+![Send Email Form](img/kirim.png "Send Email Form")
+
+Email
+
+![Email](img/email.png "Email")
 
