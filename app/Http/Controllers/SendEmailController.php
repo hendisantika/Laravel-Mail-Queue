@@ -9,7 +9,7 @@ class SendEmailController extends Controller
 {
     public function index()
     {
-        return view('kirim-email');
+        return view('emails.kirim-email');
     }
 
     public function store(Request $request)
